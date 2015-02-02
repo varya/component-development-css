@@ -10,6 +10,10 @@ For lecture at aalto
 
 ###Video
 * [Component and Styleguide driven development](http://vimeo.com/86928424
+* [БЭМ норм](https://www.youtube.com/watch?v=RM55tkWfHDc)
+* [БЭМ и SMACSS](https://www.youtube.com/watch?v=vXW7w3ym8hg)
+* [OOCSS](https://www.youtube.com/watch?v=GhX8iPcDSsI)
+* [Big CSS, Harry Roberts](https://www.youtube.com/watch?v=R-BX4N8egEc)
 
 ###To study
 * [SuitCSS](https://github.com/suitcss/suit)
