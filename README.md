@@ -6,6 +6,7 @@ For lecture at aalto
 ###Presentations:
 * [BEM is okay](http://pepelsbey.net/pres/bem-ok/en/)
 * http://www.slideshare.net/lfryc/lukas-frycrethinkingwebappdevelopmentwithwebcomponents?qid=d4412c81-c831-4ded-99f2-46e956c6d65a&v=qf1&b=&from_search=5
+* [Компонентный подход](http://www.slideshare.net/basisjs/ss-27142749)
 
 ###Video
 * [Component and Styleguide driven development](http://vimeo.com/86928424
