@@ -9,7 +9,7 @@ For lecture at aalto
 * [Компонентный подход](http://www.slideshare.net/basisjs/ss-27142749)
 
 ###Video
-* [Component and Styleguide driven development](http://vimeo.com/86928424
+* [Component and Styleguide driven development](http://vimeo.com/86928424)
 * [БЭМ норм](https://www.youtube.com/watch?v=RM55tkWfHDc)
 * [БЭМ и SMACSS](https://www.youtube.com/watch?v=vXW7w3ym8hg)
 * [OOCSS](https://www.youtube.com/watch?v=GhX8iPcDSsI)
