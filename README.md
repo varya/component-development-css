@@ -24,3 +24,6 @@ For lecture at aalto
 ### Quotes
 
 Component-driven design has been around for a long while now, but it's become imperative to think now that the Web landscape is so much more complex. It's essential to consider how every thing you include in an interface looks and functions across a whole slew of browsers, devices, and environments.
+
+
+Good CSS consists of selectors that match exactly the elements you want without accidentally matching the elements you don't. All while not being overly verbose or repetitive, being resilient to change, and adaptable to any and all future design requirements. [Philip Walton](http://philipwalton.github.io/talks/2014-11-24/#11)
