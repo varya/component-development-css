@@ -1,0 +1,19 @@
+auto: true
+safe: true
+server: true
+markdown: kramdown
+pygments: true
+permalink: /:title.html
+
+default_theme: shower-bright
+default_body_class: list
+
+author:
+    name: Varya Stepanova
+    url:  http://varya.me
+    company:
+        name: SC5 Online
+        url:  http://sc5.io/
+
+fork_url: https://github.com/varya/jscs-talk
+progress: true

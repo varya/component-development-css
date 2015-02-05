@@ -1,0 +1,29 @@
+{
+  "name": "JSCS @ HelsinkiJS",
+  "version": "0.0.1",
+  "authors": [
+    "Varya Stepanova <mail@varya.me>"
+  ],
+  "description": "Slides for talk about JSCS",
+  "main": "index.md",
+  "keywords": [
+    "jscs",
+    "js",
+    "linting",
+    "slides",
+    "talk"
+  ],
+  "license": "MIT",
+  "homepage": "http://varya.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "shower-bright": "~1.0.11",
+    "shower-core": "~1.0.7"
+  }
+}
