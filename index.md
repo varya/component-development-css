@@ -13,6 +13,10 @@ style: |
     display: none;
   }
 
+  .two-codes table td {
+    width: 50%;
+  }
+
 ---
 
 # Component development in CSS
@@ -216,7 +220,174 @@ TODO: Nice styles
 ## Web Components
 {: .shout }
 
+<!-- More info: https://developer.mozilla.org/en-US/docs/Web/Web_Components -->
+
+## Web Components
+
+* Custom Elements
+* HTML Templates
+* Shadow DOM
+* HTML Imports
+
+## Shadow DOM
+
+<video src="pictures/spacetestSMALL.mp4" controls>
+</video>
+
+    <video src="pictures/spacetestSMALL.mp4" controls>
+    </video>
+
+## Turn on dev tools
+{: .dev-tools }
+
+![](pictures/dev-tools.png)
+
+<!-- First turn on dev tools -->
+
+<style>
+.dev-tools img {
+  width: 100%;
+}
+</style>
+
+## Turn on dev tools
+{: .dev-tools2 .no-title }
+
+![](pictures/dev-tools.png)
+
+<style>
+.dev-tools2 div {
+  padding: 0;
+  width: 1024px;
+  height: 640px;
+}
+.dev-tools2 img {
+    margin-left: -750px;
+    width: 175%;
+}
+</style>
+
+## Trun on Shadow DOM
+{: .shadow-dom }
+
+![](pictures/shadow-dom.png)
+{: .crop }
+
+<style>
+.shadow-dom .crop {
+  overflow: hidden;
+}
+.shadow-dom img {
+  margin-top: -200px;
+  width: 100%;
+}
+</style>
+
+## Custom web components
+{: .two-codes }
+
 <!-- The idea is that you can teach the browser how to deal with your custom components. -->
+
+<table><tr>
+
+<td markdown="1">
+
+    <my-button>
+      Click Me
+    </my-button>
+
+</td>
+
+<td markdown="1">
+
+    <button>
+      <content></content>
+    </button>
+
+</td>
+
+</tr></table>
+
+TODO: Find better example
+
+## Shadow CSS
+{: .two-codes }
+
+<table><tr>
+
+<td markdown="1">
+
+    <my-button>
+      Click Me
+    </my-button>
+
+</td>
+
+<td markdown="1">
+
+    <style>
+      button {
+        background: #0af;
+        border: 0;
+        border-radius: .2em;
+        color: #fff;
+        font: inherit;
+        padding: .5em 1em;
+      }
+    </style>
+    <button>
+      <content></content>
+    </button>
+
+</td>
+
+</tr></table>
+
+<!-- So, the CSS now can be scoped -->
+
+## Templates
+
+    <template>
+      <h1>Hello there!</h1>
+      <p>This content is top secret</p>
+    </template>
+
+## Create DOM from templates
+
+    <template>
+      <!-- Full of slider awesomeness -->
+    </template>
+
+## HTML imports
+
+
+    <!-- Import element -->
+    <link rel="import" href="google-map.html">
+
+    <!-- Use element -->
+    <google-map lat="37.790" long="-122.390"></google-map>
+
+## Browsers' support
+
+Almost nowhere :-)
+
+## Web Components Polyfills
+
+* Polymer
+* WebComponents.org
+
+TODO: Place logos
+
+## Make it work
+
+    <!-- Polyfill Web Components support for older browsers -->
+    <mark><script src="components/webcomponentsjs/webcomponents.min.js"></script></mark>
+
+    <!-- Import element -->
+    <link rel="import" href="google-map.html">
+
+    <!-- Use element -->
+    <google-map lat="37.790" long="-122.390"></google-map>
 
 ## Style guide driven development
 
