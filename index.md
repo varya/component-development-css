@@ -222,20 +222,16 @@ TODO: Nice styles
 
 <!-- More info: https://developer.mozilla.org/en-US/docs/Web/Web_Components -->
 
+## <video>
+
+[video](demo/video.html)
+
 ## Web Components
 
 * Custom Elements
 * HTML Templates
 * Shadow DOM
 * HTML Imports
-
-## Shadow DOM
-
-<video src="pictures/spacetestSMALL.mp4" controls>
-</video>
-
-    <video src="pictures/spacetestSMALL.mp4" controls>
-    </video>
 
 ## Turn on dev tools
 {: .dev-tools }
@@ -283,83 +279,22 @@ TODO: Nice styles
 }
 </style>
 
+## Inside <video>
+
+[video](demo/video.html)
+
+
 ## Custom web components
-{: .two-codes }
+
+* [Custom web component](demo/custom-button.html)
+* [Templates](demo/templates.html)
+* [HTML import](demo/html-import.html)
 
 <!-- The idea is that you can teach the browser how to deal with your custom components. -->
 
-<table><tr>
-
-<td markdown="1">
-
-    <my-button>
-      Click Me
-    </my-button>
-
-</td>
-
-<td markdown="1">
-
-    <button>
-      <content></content>
-    </button>
-
-</td>
-
-</tr></table>
-
-TODO: Find better example
-
-## Shadow CSS
-{: .two-codes }
-
-<table><tr>
-
-<td markdown="1">
-
-    <my-button>
-      Click Me
-    </my-button>
-
-</td>
-
-<td markdown="1">
-
-    <style>
-      button {
-        background: #0af;
-        border: 0;
-        border-radius: .2em;
-        color: #fff;
-        font: inherit;
-        padding: .5em 1em;
-      }
-    </style>
-    <button>
-      <content></content>
-    </button>
-
-</td>
-
-</tr></table>
-
 <!-- So, the CSS now can be scoped -->
 
-## Templates
-
-    <template>
-      <h1>Hello there!</h1>
-      <p>This content is top secret</p>
-    </template>
-
-## Create DOM from templates
-
-    <template>
-      <!-- Full of slider awesomeness -->
-    </template>
-
-## HTML imports
-
+## HTML imports, more
 
     <!-- Import element -->
     <link rel="import" href="google-map.html">
