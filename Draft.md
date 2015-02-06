@@ -7,6 +7,9 @@ For lecture at aalto
 * [BEM is okay](http://pepelsbey.net/pres/bem-ok/en/)
 * http://www.slideshare.net/lfryc/lukas-frycrethinkingwebappdevelopmentwithwebcomponents?qid=d4412c81-c831-4ded-99f2-46e956c6d65a&v=qf1&b=&from_search=5
 * [Компонентный подход](http://www.slideshare.net/basisjs/ss-27142749)
+* [Web Components Docs](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+* [Custom elements in web components](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/)
+* [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/)
 
 ###Video
 * [Component and Styleguide driven development](http://vimeo.com/86928424)
