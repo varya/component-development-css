@@ -288,22 +288,54 @@ TODO: Nice styles
 </style>
 
 ## Web Components Polyfills
+{: .wc-polyfills }
 
-* Polymer
-* WebComponents.org
+* [WebComponents.org](http://webcomponents.org/)
+* [X-Tag](http://www.x-tags.org/)
 
-TODO: Place logos
+<style>
+
+.wc-polyfills ul li::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position: 50% 50%;
+  vertical-align: middle;
+}
+.wc-polyfills ul li:first-child::before {
+  background-image: url('pictures/webcomponents.png');
+}
+.wc-polyfills ul li:nth-child(0n + 2)::before {
+  background-image: url('pictures/polymer.svg');
+}
+
+</style>
 
 ## Make it work
 
     <!-- Polyfill Web Components support for older browsers -->
-    <mark><script src="components/webcomponentsjs/webcomponents.min.js"></script></mark>
+    <mark><script src="webcomponents.min.js"></script></mark>
 
     <!-- Import element -->
     <link rel="import" href="google-map.html">
 
     <!-- Use element -->
     <google-map lat="37.790" long="-122.390"></google-map>
+
+## Ready-made components
+
+* [Polymer](https://www.polymer-project.org/)
+* [Google Web Components](http://googlewebcomponents.github.io/)
+
+## Examples of usage
+
+* [Toolbar](demo/toolbar.html)
+* [Google map](demo/google-map.html)
 
 ## Style guide driven development
 
