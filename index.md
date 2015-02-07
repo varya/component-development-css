@@ -298,7 +298,7 @@ This is!
 
 </tr></table>
 
-##CSS methodologies
+## Methodologies
 {: .shout }
 
 ##OOCSS
@@ -331,18 +331,138 @@ This is!
 ## SMACSS
 {: .shout }
 
-##Jonathan Snook
+##Jonathan<br/>Snook
+{: .jonathan }
 
-TODO: take picture from here http://pepelsbey.net/pres/bem-ok/en/?full#jonathan-snook
+<style>
+
+.jonathan {
+  position: relative;
+  background-image:url(pictures/jonathan-snook.jpg);
+}
+
+.jonathan h2 {
+  position: absolute;
+  right: 50px;
+  bottom: 200px;
+  font-size: 72px;
+  font-weight: bold;
+}
+
+</style>
 
 ## BEM
 {: .shout }
 
-## BEM team
+## Vitaly<br/>Harisov
+{: .harisov }
 
-TODO: Vitaly Harisov & Sergey Berezhnoy
+<style>
 
-## BEM basics
+.harisov {
+  position: relative;
+  background-image: url(pictures/vitaly-harisov.jpg);
+  background-size: auto 640px;
+}
+
+.harisov h2 {
+  position: absolute;
+  right: 100px;
+  bottom: 200px;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+</style>
+
+## Sergey<br/>Berezhnoy
+{: .veged }
+
+<style>
+
+.veged {
+  position: relative;
+  background-image: url(pictures/veged.jpg);
+  background-size: 1024px auto;
+}
+
+.veged h2 {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+</style>
+
+## BEM eco-system
+
+* <mark>CSS Methodology</mark>
+* JavaScript framework
+* Template engine
+* Building system
+
+## Harry & Nicolas
+{: .no-title .harry-nicolas }
+
+### Harry<br/>Roberts
+{: .harry }
+
+###Nicolas<br/>Gallagher
+{: .nicolas }
+
+<style>
+
+.harry-nicolas {
+  position: relative;
+  background-image: url(pictures/harry-nicolas.jpg);
+}
+
+.harry-nicolas .harry {
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  bottom: 50px;
+  left: 300px;
+  line-height: 1.5em;
+}
+
+.harry-nicolas .nicolas {
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  line-height: 1.5em;
+}
+
+</style>
+
+## BEM
+
+* Block
+* Element
+* Modificator
+
+## Interface
+{: .no-title .interface }
+
+![](pictures/bem/interface.gif)
+
+<style>
+.interface div {
+  padding-top: 20px;
+}
+.interface img {
+  height: 530px;
+}
+</style>
+
+## Interface of blocks
+{: .no-title .interface }
+
+![](pictures/bem/interface-blocks.jpeg)
 
 ## GetBem
 {: .no-title }
