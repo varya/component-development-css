@@ -101,8 +101,11 @@ First published in 1996
 first published in 1996. -->
 
 ## Industry challenges
+{: .no-title }
 
-Not your cat's homepage
+![](pictures/homepage.png)
+
+<!-- Not your cat's homepage -->
 
 ## Bulletproof Web Desing
 {: .bulletproof .no-title }
