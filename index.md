@@ -222,70 +222,35 @@ TODO: Nice styles
 
 <!-- More info: https://developer.mozilla.org/en-US/docs/Web/Web_Components -->
 
-## <video>
+## Technologies behind
+{: .wc-behind }
 
-[video](demo/video.html)
+<div class="wc-logo"></div>
+
+* Shadow DOM
+* Custom Elements
+* HTML Templates
+* HTML Imports
+
+<style>
+
+.wc-behind .wc-logo {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 200px;
+  margin-right: 200px;
+  background-image:url('pictures/webcomponents.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+</style>
 
 ## Web Components
 
-* Custom Elements
-* HTML Templates
-* Shadow DOM
-* HTML Imports
-
-## Turn on dev tools
-{: .dev-tools }
-
-![](pictures/dev-tools.png)
-
-<!-- First turn on dev tools -->
-
-<style>
-.dev-tools img {
-  width: 100%;
-}
-</style>
-
-## Turn on dev tools
-{: .dev-tools2 .no-title }
-
-![](pictures/dev-tools.png)
-
-<style>
-.dev-tools2 div {
-  padding: 0;
-  width: 1024px;
-  height: 640px;
-}
-.dev-tools2 img {
-    margin-left: -750px;
-    width: 175%;
-}
-</style>
-
-## Trun on Shadow DOM
-{: .shadow-dom }
-
-![](pictures/shadow-dom.png)
-{: .crop }
-
-<style>
-.shadow-dom .crop {
-  overflow: hidden;
-}
-.shadow-dom img {
-  margin-top: -200px;
-  width: 100%;
-}
-</style>
-
-## Inside <video>
-
-[video](demo/video.html)
-
-
-## Custom web components
-
+* [video](demo/video.html)
 * [Custom web component](demo/custom-button.html)
 * [Templates](demo/templates.html)
 * [HTML import](demo/html-import.html)
@@ -294,7 +259,7 @@ TODO: Nice styles
 
 <!-- So, the CSS now can be scoped -->
 
-## HTML imports, more
+## HTML import, library
 
     <!-- Import element -->
     <link rel="import" href="google-map.html">
@@ -302,9 +267,18 @@ TODO: Nice styles
     <!-- Use element -->
     <google-map lat="37.790" long="-122.390"></google-map>
 
-## Browsers' support
+## Are We Componentized Yet?
+{: .componentized }
 
-Almost nowhere :-)
+![](pictures/componentized.png)
+
+<style>
+
+.componentized img {
+  width: 100%;
+}
+
+</style>
 
 ## Web Components Polyfills
 
