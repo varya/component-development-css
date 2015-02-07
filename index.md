@@ -9,6 +9,13 @@ style: |
     background: none;
   }
 
+  .slide pre code {
+    background-color: #efefef;
+    padding: 0.5em;
+    line-height: 1.5em;
+    font-sizeL 20px;
+  }
+
   .no-title h2 {
     display: none;
   }
@@ -250,7 +257,7 @@ TODO: Nice styles
 
 ## Web Components
 
-* [video](demo/video.html)
+* [Navite component](demo/video.html)
 * [Custom web component](demo/custom-button.html)
 * [Templates](demo/templates.html)
 * [HTML import](demo/html-import.html)
@@ -262,7 +269,7 @@ TODO: Nice styles
 ## HTML import, library
 
     <!-- Import element -->
-    <link rel="import" href="google-map.html">
+    <link rel="import" href="my-lib/google-map.html">
 
     <!-- Use element -->
     <google-map lat="37.790" long="-122.390"></google-map>
