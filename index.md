@@ -28,10 +28,33 @@ style: |
 
 # Component development in CSS
 
-*by [Varya Stepanova](http://varya.me/) from [SC5 Online](http://sc5.io/)*{: .cover}
+*by [Varya Stepanova](http://varya.me/) from [SC5 Online](http://sc5.io/)*
 
 ![](pictures/cover.jpg)
-<!-- picture from http://hdwallpaperart.com/ -->
+
+<style>
+
+.cover {
+  color: #fff;
+}
+
+.cover h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 1.25em;
+  text-shadow: 5px 10px 15px rgba(0,0,0,1);
+}
+
+.cover p {
+  text-shadow: 5px 10px 15px rgba(0,0,0,1);
+}
+
+.cover a {
+  color: #fff;
+}
+
+</style>
 
 ## About me
 
