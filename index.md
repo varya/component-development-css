@@ -4,6 +4,15 @@ layout: default
 
 style: |
 
+  .slide p {
+    margin-bottom: 24px;
+  }
+
+  .slide h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
   .slide table th,
   .slide table td {
     background: none;
@@ -56,7 +65,17 @@ style: |
 
 </style>
 
-## About me
+## Me
+{: .no-title }
+
+### Now
+Senior Frontend Develover for SC5 Online
+
+### Before
+TMG (Amsterdam, the Netherlands); Yandex (Moscow, Russia)
+
+###Area of expertise
+Components in web: libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
 
 ## Spoiler
 
