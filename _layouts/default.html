@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<link rel="stylesheet" href="bower_components/{{ theme }}/styles/screen.css">
   <link rel="stylesheet" href="bower_components/{{ theme }}/styles/print.css" media="print">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.4/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/highlight.js/8.4/highlight.min.js"></script>
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Raleway:600" rel="stylesheet" type="text/css">
 	{% if page.style %}<style>
 {{ page.style }}</style>{%endif%}
@@ -22,6 +24,7 @@
 	{% if progress %}<div class="progress"><div></div></div>{% endif %}
 	<script src="bower_components/shower-core/shower.min.js"></script>
 	<!-- Copyright © 2010–2013 Vadim Makeev — pepelsbey.net -->
-	<!-- Photos by John Carey — fiftyfootshadows.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
