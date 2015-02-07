@@ -128,6 +128,26 @@ mantainable. -->
 }
 </style>
 
+##Is this good?
+
+    H1 { color: blue }
+    P EM { font-weight: bold }
+    A:link IMG { border: 2px solid blue }
+    A:visited IMG { border: 2px solid red }
+    A:active IMG { border: 2px solid lime }
+
+<!-- CSS was created to make text bold and links underlined. It ideally suited
+solving these problems. In many websites developers still use CSS like.
+
+Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
+very simple, was recommended in 1996. Time passed and we met new chalenges.
+
+Writing CSS is easy. It is very easy to read and it is very likely that you can
+find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
+
+-->
+
+
 ## Big CSS
 
 * massive sites
@@ -135,14 +155,14 @@ mantainable. -->
 * heavy UI
 * long running projects
 
-TODO: explain problems
+<!-- Explain every point with examples -->
 
 ## What makes CSS hard?
 
-* Vertical centring
-* Equal height columns
-* Browser inconsistencies
-* Unobvious tricks
+* …Vertical centring
+* …Equal height columns
+* …Browser inconsistencies
+* …Unobvious tricks
 
 <!-- All those things can be googled -->
 
@@ -155,6 +175,87 @@ TODO: explain problems
 * Removing unused code
 
 TODO: Explain each of them
+
+## CSS has no scoping
+
+    .Main a { /* Affects all the links */
+      color: red;
+    }
+
+<separate/>
+
+    .Main>a { /* Good try. But not */
+      color: red;
+    }
+{: .next }
+
+TODO: More examples of no scoping
+
+<!-- You cannot rely on the document structure, because it contantly changes while developing -->
+<!-- This especially maters if you link third-party CSS -->
+
+## Specificity
+
+> Specificity is the means by which a browser decides which property values are the most relevant to an element and gets
+> to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.
+
+## The most specific matters
+
+    <div id="test">
+      <span>Text</span>
+    </div>
+
+<separator/>
+
+    div#test span { color: green }
+    span { color: red }
+    div span { color: blue }
+
+## How to overwrite?
+
+    .sidebar { /* Does not work?! */
+      float: right;
+    }
+
+<separator/>
+
+    body .sidebar {
+      float: right;
+    }
+{: .next }
+
+## Specificity hell
+{: .no-title }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #999;
+    }
+
+    #home-menu-container #home-menu li a {
+      color: red;
+    }
+
+    body #home-menu ul li a {
+      color: blue !important;
+    }
+
+<!-- People ask on Stackoverflow how to overwrite Bootsrtap -->
+<!-- These things can be in different files -->
+
+##Non-deterministic matches
+
+    #id2 div div {
+      float: left;
+    }
+
+<!-- This can be matched to anything -->
+<!-- в момент, когда ты пишешь, ты указываешь признаки нод, на которые сматчится правило, а не точный адрес. смотри:
+можно писать адрес «Rettigweg 1, 13187 Berlin", а можно «около Wollankstrasse такая боковая улица с тремя домами, и
+там есть такой желтый дом, и там на втором этаже ещё балконы металлические с узорами» -->
+
+## Dependency management
+
+## Removing unused code
 
 ## Where CSS is hard?
 {: .no-title }
@@ -197,49 +298,32 @@ This is!
 
 </tr></table>
 
-##Is this good?
-
-    H1 { color: blue }
-    P EM { font-weight: bold }
-    A:link IMG { border: 2px solid blue }
-    A:visited IMG { border: 2px solid red }
-    A:active IMG { border: 2px solid lime }
-
-<!-- CSS was created to make text bold and links underlined. It ideally suited
-solving these problems. In many websites developers still use CSS like.
-
-Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
-very simple, was recommended in 1996. Time passed and we met new chalenges.
-
-Writing CSS is easy. It is very easy to read and it is very likely that you can
-find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
-
--->
-
-##CSS needs architechture
-{: .shout }
-
 ##CSS methodologies
 {: .shout }
 
 ##OOCSS
+{: .shout }
 
-##Nicole Sullivan
+##Nicole<br/>Sullivan
 {: .nicole }
-
-TODO: Nice styles
 
 <!-- She proposed OOP for CSS. This was a little bit naive but this was a first attempt. -->
 
 <style>
 
 .nicole {
+  position: relative;
   background-image: url('pictures/nicole-sullivan.jpg');
 }
 
 .nicole h2 {
+  position: absolute;
+  right: 100px;
+  bottom: 275px;
   font-size: 80px;
   color: white;
+  font-weight: bold;
+  text-shadow: 5px 10px 15px rgba(0,0,0,1);
 }
 
 </style>
