@@ -174,24 +174,15 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
 * Dependency management
 * Removing unused code
 
-TODO: Explain each of them
-
 ## CSS has no scoping
 
-    .Main a { /* Affects all the links */
+    a { /* Affects all the links */
       color: red;
     }
-
-<separate/>
-
-    .Main>a { /* Good try. But not */
-      color: red;
+    ul li a { /* Affects all the links in lists */
+      color: green;
     }
-{: .next }
 
-TODO: More examples of no scoping
-
-<!-- You cannot rely on the document structure, because it contantly changes while developing -->
 <!-- This especially maters if you link third-party CSS -->
 
 ## Specificity
@@ -249,6 +240,7 @@ TODO: More examples of no scoping
     }
 
 <!-- This can be matched to anything -->
+<!-- You cannot rely on the document structure, because it contantly changes while developing -->
 <!-- в момент, когда ты пишешь, ты указываешь признаки нод, на которые сматчится правило, а не точный адрес. смотри:
 можно писать адрес «Rettigweg 1, 13187 Berlin", а можно «около Wollankstrasse такая боковая улица с тремя домами, и
 там есть такой желтый дом, и там на втором этаже ещё балконы металлические с узорами» -->
@@ -258,7 +250,7 @@ TODO: More examples of no scoping
 ## Removing unused code
 
 ## Where CSS is hard?
-{: .no-title }
+{: .no-title .hard-css }
 
 <table><thead>
 
@@ -297,6 +289,17 @@ This is!
 </td>
 
 </tr></table>
+
+*How do we architect encapsulated components?*
+{: .next }
+
+<style>
+.hard-css em {
+  font-size: 30px;
+}
+</style>
+
+<!-- CSS is global -->
 
 ## Methodologies
 {: .shout }
@@ -445,38 +448,227 @@ This is!
 * Element
 * Modificator
 
+## BEM
+{: .no-title }
+* No IDs
+* No cascade
+* Unique classes
+
 ## Interface
 {: .no-title .interface }
 
-![](pictures/bem/interface.gif)
-
 <style>
 .interface div {
-  padding-top: 20px;
-}
-.interface img {
-  height: 530px;
+  margin-top: 20px;
+  background-image: url(pictures/bem/page.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 </style>
 
 ## Interface of blocks
-{: .no-title .interface }
+{: .no-title .interface-blocks }
 
-![](pictures/bem/interface-blocks.jpeg)
+<style>
+.interface-blocks div {
+  margin-top: 20px;
+  background-image: url(pictures/bem/page-blocks.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+</style>
 
-## GetBem
+## Everything is a block
 {: .no-title }
 
-[getbem.com](http://getbem.com/)
+    <body class="page">
 
-TODO: Nice styles
+      <div class="header">
+          <img class="logo" ... />
+          <div class="search">...</div>
+          <div class="menu">...</div>
+      </div>
 
-## Advanced BEM
+      <div class="layout">
+          <div class="sidebar">...</div>
+          <div class="menu">...</div>
+      </div>
 
-## BemInfo
+<!-- Blocks are marked with classes in HTML -->
+
+## Why not...?
+
+    <ul id="menu">
+      <li>Tab 1</li>
+      <li>Tab 2</li>
+    <ul>
+
+<separator/>
+
+    #menu {
+      /* styles for element */
+    }
+
+## No IDs
+
+Someday you will need to repeat the block at the same page
+
+## Elements
+{: .elements }
+
+![](pictures/bem/elements.png)
+
+## Elements markup
 {: .no-title }
 
-[bem.info](http://bem.info/)
+
+    <div class="tabbed-pane">
+      <ul>
+          <li class="tabbed-pane--tab">Tab1</li>
+          <li class="tabbed-pane--tab">Tab2</li>
+      </ul>
+      <div class="tabbed-pane--panel">
+          ...
+      </div>
+    </div>
+
+## CSS for an element
+
+    .block {
+      /* styles for block */
+    }
+      .block--element {
+        /* styles for element */
+      }
+
+## Why not...?
+
+    <ul class="menu">
+      <li class="item">Tab 1</li>
+      <li class="item">Tab 2</li>
+    <ul>
+
+<separator/>
+
+    .menu .item {
+      /* styles for element */
+    }
+
+## No cascade
+
+Remember about <mark>non-deterministic matches</mark>
+
+## Modified block
+{: .no-title .modified-block }
+
+## Modifier
+
+    <ul class="menu menu_footer">
+      <li class="menu--item">...</li>
+      ...
+    </ul>
+
+<separator/>
+
+    .menu_footer {
+      font-size: 0.8em;
+    }
+
+<style>
+.modified-block div {
+  padding-top: 20px;
+  background-image: url(pictures/bem/site-footer-menu.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+## CSS for modifier
+    .block {
+      /* styles for block */
+    }
+      <mark>.block_modifier</mark> {
+        /* styles for modifier */
+      }
+      .block--element {
+        /* styles for element */
+      }
+
+## Modified element
+
+![](pictures/bem/menu-current-item.png)
+
+## Element's modifier
+
+    <ul class="menu">
+      <li class="menu--item">Tab 1</li>
+      <li class="menu--item <mark>menu--item_current</mark>">Tab 2</li>
+      <li class="menu--item">Tab 3</li>
+    </ul>
+
+## CSS for elements' modifier
+
+    .block
+      /* styles for block */
+    }
+      .block--element {
+        /* styles for element */
+      }
+        .block--element_modifier {
+          /* styles for modified element
+        }
+{: .css }
+
+## Why not...?
+
+    <ul class="menu footer">...<ul>
+
+<separator/>
+
+    .menu.footer { /* combined selector */
+      font-size: 0.8em;
+    }
+
+## Why not...?
+
+    <ul class="menu">
+      <li class="menu--item current">Tab 2</li>
+    <ul>
+
+<separator/>
+
+    .menu--item.current { /* combined selector */
+      background-color: red;
+    }
+
+## No overspecific selectors
+
+You would suffer when redefining
+
+## BEM & CSS preprocessors
+
+    .block {
+      /* styles for block */
+      <mark>&</mark>_modifier {
+        /* styles for modifier */
+      }
+      <mark>&</mark>--element {
+        /* styles for element */
+      }
+    }
+{: .css }
+
+## [getbem.com](http://getbem.com/)
+{: .shout }
+
+## This is solved
+
+* Scoping
+* Specificity conflicts
+* Non-deterministic matches
+* Dependency management
+* Removing unused code
 
 ## Web Components
 {: .shout }
