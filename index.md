@@ -13,6 +13,10 @@ style: |
     font-weight: bold;
   }
 
+  .slide blockquote cite {
+    font-weight: 700;
+  }
+
   .slide table th,
   .slide table td {
     background: none;
@@ -85,12 +89,13 @@ TODO: List
 
 ## CSS
 
-*First published in 1996*
+
 
 > *Cascading Style Sheets* (CSS) is a style sheet language used for describing the look and formatting of a document
-> written in a markup language.
+> written in a markup language. <cite>[Wikipedia](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)</cite>
 
-[Wikipedia](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+First published in 1996
+{: .note}
 
 <!-- CSS was designed to enable the separation of document content from document presentation. The specification was
 first published in 1996. -->
