@@ -75,13 +75,13 @@ style: |
 {: .no-title }
 
 ### Now
-Senior Frontend Develover for SC5 Online
+Senior Frontend Developer for SC5 Online
 
 ### Before
 TMG (Amsterdam, the Netherlands); Yandex (Moscow, Russia)
 
 ###Area of expertise
-Components in web: libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
+Components on the web: libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
 
 <!--
 Before we start, I would like to introduce myself and explain why
@@ -193,7 +193,7 @@ very simple, was recommended in 1996. Time passed and we met new chalenges.
 
 ## What makes CSS hard?
 
-* …Vertical centring
+* …Vertical centering
 * …Equal height columns
 * …Browser inconsistencies
 * …Unobvious tricks
@@ -277,7 +277,7 @@ would be prioritized.
 So, here we see...
 -->
 
-## How to overwrite?
+## How to override?
 
     <div class="sidebar">Left floated sidebar</div>
 
@@ -290,7 +290,7 @@ So, here we see...
 
 <separator/>
 
-    body .sidebar { /* Overwrites 'div .sidebar {}' */
+    body .sidebar { /* Overrides 'div .sidebar {}' */
       float: right;
     }
 {: .next }
@@ -337,7 +337,7 @@ These things can be in different files
 ## Dependency management
 {: .dependency-management }
 
-###No dependecies, sorry
+###No dependencies, sorry
 
 <div class="next" markdown="1">
 ### But what about?
@@ -583,7 +583,7 @@ a little bit more about it today.
 * JavaScript framework
 * Template engine
 * Building system
-* Suplimentary tools
+* Supplementary tools
 
 <!--
 Actually behind BEM there is a massive amount for JavaScript libraries, own template engine, many supplimentary tools.
@@ -640,7 +640,7 @@ networks accounts.
 
 * Block
 * Element
-* Modificator
+* Modifier
 
 ## Interface
 {: .no-title .interface }
@@ -808,7 +808,7 @@ You can see that both block class and modifier class sit together at the same no
 </style>
 
 
-## CSS for modifier
+## CSS for a modifier
     .block {
       /* styles for block */
     }
@@ -831,7 +831,7 @@ You can see that both block class and modifier class sit together at the same no
       <li class="menu--item">Tab 3</li>
     </ul>
 
-## CSS for elements' modifier
+## CSS for an elements' modifier
 
     .block
       /* styles for block */
@@ -1009,7 +1009,7 @@ You would suffer when redefining
 * [Polymer](https://www.polymer-project.org/)
 * [Google Web Components](http://googlewebcomponents.github.io/)
 
-## Examples of usage
+## Usage examples
 
 * [Toolbar](demo/toolbar.html)
 * [Google map](demo/google-map.html)
