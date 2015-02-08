@@ -45,6 +45,8 @@ style: |
 
 ![](pictures/cover.jpg)
 
+<!-- This lecture is about developing web interfaces with CSS from component perspective -->
+
 <style>
 
 .cover {
@@ -81,11 +83,20 @@ TMG (Amsterdam, the Netherlands); Yandex (Moscow, Russia)
 ###Area of expertise
 Components in web: libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
 
+<!--
+Before we start, I would like to introduce myself and explain why
+this topic has been chosen.
+-->
+
 ## Spoiler
 
 You will learn:
 
 TODO: List
+
+<!--
+This is what I'm going to show today
+-->
 
 ## CSS
 
@@ -97,25 +108,44 @@ TODO: List
 First published in 1996
 {: .note}
 
-<!-- CSS was designed to enable the separation of document content from document presentation. The specification was
-first published in 1996. -->
+<!--
+The meaty part of the lecture is about CSS.
+Are you familiar with this technology?
+
+CSS is used to style web documents. CSS rules can be matched to DOM nodes and bring them view which
+is descriped with CSS properties.
+
+This concept is pretty old. CSS was first introduced in 1996. And nothing conceptually has been changed since then.
+However the web now is far more complex than in 1996, so in industry we are facing the chalelngies and need a way to
+overcome.
+-->
 
 ## Industry challenges
 {: .no-title }
 
 ![](pictures/homepage.png)
 
-<!-- Not your cat's homepage -->
+<!--
+In this picture you can see how the web pages used to look like. And from the architectural point of view they were
+similar. The industry just did not have experience back then to provide recommendations how to build the we good.
+
+Now things have already changed. Today, if you are developing not you cat's homepage but a serious website, it should
+meet the requirements.
+-->
 
 ## Bulletproof Web Desing
 {: .bulletproof .no-title }
 
-<!-- First place which I know where the industry needs were explained and requirements to the resultant product were
-given is a book "Bulletproof Web Desing" by Dan Cederholm. It was first published in 2005 which is quite long ago for
-such a rapid evolving inductry.
-
-The idea is that HTML/CSS markup is not created once and forever. By 2005 industry needed it to be stable and
-mantainable. -->
+<!--
+This problem was first spoken out loud by this gentelman. His name is Dan Cederholm and he is the author of the book
+shown. The "Bulletproof Web Design" is a first place where the inductry needs were explained.
+In was first published in 2005 and has 2 more editions since then. However this is quite mature book, I still recommend
+it if you want to step in the industry level of creating web sites.
+He first said that the HTML/CSS markup we produce should be stable. It should be maitainable meaning not very sensetive
+to the providing changes.
+So, it's not like single action - provide the code and forget about it. A developer will get back to their code to fix
+something. Other developers will bring their changes into the code. And nothing should be broken in unexpected places.
+-->
 
 <style>
 .bulletproof {
@@ -128,6 +158,20 @@ mantainable. -->
 }
 </style>
 
+## Big CSS
+
+* massive sites
+* big teams of developers
+* heavy UI
+* long running projects
+
+<!--
+massive sites: A lot of code, thousands of lines
+big teams of developers: up to hundreds of ppl, teams can grow and change
+heavy UI: each piece of interface has a lot of code and logic behind
+long running project: need to be maintainable
+-->
+
 ##Is this good?
 
     H1 { color: blue }
@@ -136,26 +180,16 @@ mantainable. -->
     A:visited IMG { border: 2px solid red }
     A:active IMG { border: 2px solid lime }
 
-<!-- CSS was created to make text bold and links underlined. It ideally suited
+<!--
+Now look at this code. Do you see something strange? Any guess?
+Who would write their CSS like this?
+
+The problem is that CSS was created to make text bold and links underlined. It ideally suited
 solving these problems. In many websites developers still use CSS like.
 
 Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
 very simple, was recommended in 1996. Time passed and we met new chalenges.
-
-Writing CSS is easy. It is very easy to read and it is very likely that you can
-find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
-
 -->
-
-
-## Big CSS
-
-* massive sites
-* big teams of developers
-* heavy UI
-* long running projects
-
-<!-- Explain every point with examples -->
 
 ## What makes CSS hard?
 
@@ -164,7 +198,17 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
 * …Browser inconsistencies
 * …Unobvious tricks
 
-<!-- All those things can be googled -->
+<!--
+Before we decide what is wrong with that peice, let's guess what is hard in CSS.
+
+When ppl are asked, the repson is usually
+- vertical centing
+- making columns of equial height
+- browers render CSS differently, so it takes special knowledge and work to make the interface consistent
+- many solutions are unobvious tricks which needed to be memorized
+
+But this is not true, this is easy or at least clear how to manage. You can google for all this questions.
+-->
 
 ## What are the real hard problems in CSS?
 
@@ -173,6 +217,15 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
 * Non-deterministic matches
 * Dependency management
 * Removing unused code
+
+<!--
+The real hard problems of CSS are here:
+- No scoping. Everything is CSS is global.
+- Specificity conflicts. I'll explain in detal later.
+- Non-deterministic matches which naturally result from declarativeness of CSS language
+- Dependency management
+- Removing unused code
+-->
 
 ## CSS has no scoping
 
@@ -183,12 +236,25 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
       color: green;
     }
 
-<!-- This especially maters if you link third-party CSS -->
+<!--
+This especially maters if you link third-party CSS.
+A common problem for developing libraries or code which will be later delivered to another web site.
+Everything in CSS is global, and writing good CSS is similar to writing a good program module if you only allowed to use
+global variables.
+This can be mixed with another CSS and applied to wrong nodes.
+Writing good CSS means you has to predict the future.
+-->
 
 ## Specificity
 
 > Specificity is the means by which a browser decides which property values are the most relevant to an element and gets
 > to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.
+
+<!--
+Another problem is specificity.
+Who remember what specificity is?
+Ok, I will explain.
+-->
 
 ## The most specific matters
 
@@ -202,18 +268,39 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
     span { color: red }
     div span { color: blue }
 
+<!--
+If a brower has 2, 3 or more rules which match the same DOM node, how it decides what are the properties to take into
+work?
+The order does not matter.
+For every selector a browser calculates how important this set of rules is. The rule with the more specific selector
+would be prioritized.
+So, here we see...
+-->
+
 ## How to overwrite?
+
+    <div class="sidebar">Left floated sidebar</div>
+
+<separator/>
 
     .sidebar { /* Does not work?! */
       float: right;
     }
+{: .next }
 
 <separator/>
 
-    body .sidebar {
+    body .sidebar { /* Overwrites 'div .sidebar {}' */
       float: right;
     }
 {: .next }
+
+<!--
+When it comes to developments, specificity matters when redefining pre-given
+components.
+
+To redefine the left-floated sidebar, we would overwrite the rule.
+-->
 
 ## Specificity hell
 {: .no-title }
@@ -230,12 +317,14 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
       color: blue !important;
     }
 
-<!-- People ask on Stackoverflow how to overwrite Bootsrtap -->
-<!-- These things can be in different files -->
+<!--
+People ask on Stackoverflow how to overwrite Bootsrtap
+These things can be in different files
+-->
 
 ##Non-deterministic matches
 
-    #id2 div div {
+    #content div div {
       float: left;
     }
 
@@ -246,8 +335,47 @@ find the tricks you need at Stackoverflow. But architechting CSS is very difficu
 там есть такой желтый дом, и там на втором этаже ещё балконы металлические с узорами» -->
 
 ## Dependency management
+{: .dependency-management }
+
+###No dependecies, sorry
+
+<div class="next" markdown="1">
+### But what about?
+
+    @import url('i-need-this.css');
+</div>
+
+### No, sorry again.
+{: .next .sorry }
+
+<!--
+CSS was not developed as a programming language and now it still isn't. So, there is no way to declare that
+one piece of CSS needs anotehr one.
+OK, there is import. But this is not  aproduction solution. And assuming undeterministic matches we cannot rely on it.
+-->
+
+<style>
+.dependency-management .sorry
+{
+  color: green;
+}
+</style>
 
 ## Removing unused code
+
+100 pages in projects
+
+    .person div a {
+      color: pink;
+    }
+
+Can I remove it? Will it break something? Maybe it is for a third-party HTML code?
+
+<!--
+CSS is declarative, so you cannot say what are the nodes the rules will aply to.
+If you have a lot of pages you cannot remove a piece of CSS and check visually if something is broken.
+Even worse with  dynamic web sites.
+-->
 
 ## Where CSS is hard?
 {: .no-title .hard-css }
@@ -293,24 +421,49 @@ This is!
 *How do we architect encapsulated components?*
 {: .next }
 
+<!--
+Writing CSS is easy. It is very easy to read and it is very likely that you can
+find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
+
+We need a way to architect independent encapsulated components.
+Being put into any place on the page, the components should not break anything. Also, it should not be broken
+itself.
+-->
+
 <style>
 .hard-css em {
   font-size: 30px;
 }
 </style>
 
-<!-- CSS is global -->
-
 ## Methodologies
 {: .shout }
+
+<!--
+As CSS does not provide us with the answer to the question how to do it, the developers should up
+the methodologies.
+The methodology does not give change into the technology. It suggest a developer how to use the
+technology better.
+-->
 
 ##OOCSS
 {: .shout }
 
+<!--
+The first methodology proposed was OOCSS, stands for Object Oriented CSS.
+-->
+
 ##Nicole<br/>Sullivan
 {: .nicole }
 
-<!-- She proposed OOP for CSS. This was a little bit naive but this was a first attempt. -->
+<!--
+It was in 2007, this is Nicole Sullivan, who authored it.
+She worked for Yahoo and by that time she was dealing with components for Yahoo UI and was trying to
+give some order to all this mess. So, she proposed to use some principles from OOP to CSS. This was in 2007.
+I will not explain the detailes because I belive that this era is passed by.
+But I still think that I should mentione her as a pioneer. She was a first developer who was trying to
+solve it.
+-->
 
 <style>
 
@@ -334,8 +487,17 @@ This is!
 ## SMACSS
 {: .shout }
 
+<!--
+Another milestone is SMACCS, which is Scalable and Modular Architecture for CSS.
+This is a book, first published in 2009 but still available.
+-->
+
 ##Jonathan<br/>Snook
 {: .jonathan }
+
+<!--
+The author is this gentelman, Jonathan Snook. You can find his website if interested.
+-->
 
 <style>
 
@@ -357,8 +519,18 @@ This is!
 ## BEM
 {: .shout }
 
+<!--
+And the last new thing appeared was BEM, stands for Block, Element Modifier.
+It was created in 2009, then evoluated and had a long way to its popularity by now.
+-->
+
 ## Vitaly<br/>Harisov
 {: .harisov }
+
+<!--
+This is one of the main authors. Vitaly Harisov. He works for Yandex and heads the
+frontend development there.
+-->
 
 <style>
 
@@ -380,6 +552,12 @@ This is!
 
 ## Sergey<br/>Berezhnoy
 {: .veged }
+
+<!--
+Another co-author is Sergey Berezhnoy, who also works for Yandex.
+O was very lucky to work with them and be a member of the BEM team, so I can tell you
+a little bit more about it today.
+-->
 
 <style>
 
@@ -405,6 +583,13 @@ This is!
 * JavaScript framework
 * Template engine
 * Building system
+* Suplimentary tools
+
+<!--
+Actually behind BEM there is a massive amount for JavaScript libraries, own template engine, many supplimentary tools.
+Mosty these things are very local, but the CSS Methodology is a popular thing and becoming a standard all over the
+world. So, I'll explain it in details.
+-->
 
 ## Harry & Nicolas
 {: .no-title .harry-nicolas }
@@ -414,6 +599,15 @@ This is!
 
 ###Nicolas<br/>Gallagher
 {: .nicolas }
+
+<!--
+These 2 gentelmen are also important persons in the BEM community.
+These are Harry Roberts from Britan and Nicolas Gallaher from USA. They had have a great role in BEM to be wide-spreaded
+and become a standard.
+Both are very famous developers and Harry is also the most wanted speaker for frontend conferences now.
+So, if you are interested in their motivation of taking this approach, you can google for their blogs and social
+networks accounts.
+-->
 
 <style>
 
@@ -447,12 +641,6 @@ This is!
 * Block
 * Element
 * Modificator
-
-## BEM
-{: .no-title }
-* No IDs
-* No cascade
-* Unique classes
 
 ## Interface
 {: .no-title .interface }
@@ -524,10 +712,11 @@ Someday you will need to repeat the block at the same page
 
     <div class="tabbed-pane">
       <ul>
-          <li class="tabbed-pane--tab">Tab1</li>
-          <li class="tabbed-pane--tab">Tab2</li>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab1</li>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab2</li>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab3</li>
       </ul>
-      <div class="tabbed-pane--panel">
+      <div class="tabbed-pane--pane">
           ...
       </div>
     </div>
@@ -537,9 +726,18 @@ Someday you will need to repeat the block at the same page
     .block {
       /* styles for block */
     }
-      .block--element {
+      <mark>.block--element</mark> {
         /* styles for element */
       }
+
+<!--
+Elements have their own CSS classes. These classes are named so that it is clear which block the
+element belongs to.
+So, the idea is to encapsulate the components, its name becomes a kind of namespace and everything inside belongs to
+this namespace.
+Here dash-dash is used as a separator. Sometimes people use 2 underscores, but dash-dash looks like the most
+common convention.
+-->
 
 ## Why not...?
 
@@ -556,14 +754,34 @@ Someday you will need to repeat the block at the same page
 
 ## No cascade
 
-Remember about <mark>non-deterministic matches</mark>
+    <div class="panels">
+      <div class="item">
+          <ul class="goods">
+            <li class="item">
+              <!--
+                Remember: <mark>non-deterministic matches</mark>
+                -->
+            </li>
+          </ul>
+      </div>
+    </div>
+
+<!--
+Poor little item does not know if it belongs to panels or to goods.
+Making the selector more specific would not help, because we cannot rely on the document structure.
+-->
 
 ## Modified block
 {: .no-title .modified-block }
 
+<!--
+Components are similar visually and  functionally.
+Good not to repeat ourselves but to reuse the code of the first component and provide some changes to it.
+-->
+
 ## Modifier
 
-    <ul class="menu menu_footer">
+    <ul class="menu <mark>menu_footer</mark>">
       <li class="menu--item">...</li>
       ...
     </ul>
@@ -573,6 +791,12 @@ Remember about <mark>non-deterministic matches</mark>
     .menu_footer {
       font-size: 0.8em;
     }
+
+<!--
+BEM answer to this question is a modifier.
+With additinal CSS clas to a block you can provide more information about view.
+You can see that both block class and modifier class sit together at the same node.
+-->
 
 <style>
 .modified-block div {
@@ -615,7 +839,7 @@ Remember about <mark>non-deterministic matches</mark>
       .block--element {
         /* styles for element */
       }
-        .block--element_modifier {
+        <mark>.block--element_modifier</mark> {
           /* styles for modified element
         }
 {: .css }
@@ -645,6 +869,13 @@ Remember about <mark>non-deterministic matches</mark>
 ## No overspecific selectors
 
 You would suffer when redefining
+
+    .menu--item.current {
+      background: white;
+    }
+    .menu_dark .menu--item {
+      background: black; /* Still white, baby */
+    }
 
 ## BEM & CSS preprocessors
 
