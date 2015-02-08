@@ -100,8 +100,6 @@ This is what I'm going to show today
 
 ## CSS
 
-
-
 > *Cascading Style Sheets* (CSS) is a style sheet language used for describing the look and formatting of a document
 > written in a markup language. <cite>[Wikipedia](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)</cite>
 
@@ -901,10 +899,21 @@ You would suffer when redefining
 * Dependency management
 * Removing unused code
 
+<!--
+So, this was about how the developers deal with component development in CSS now.
+As you can see, CSS as a technology does not provide us a solution. So, we think up
+our own way and recomendations how to use it.
+But the reason of the need to use the metholodogy is drawbacks of CSS. And the right
+way would be to fix the problems itself.
+-->
+
 ## Web Components
 {: .shout }
 
-<!-- More info: https://developer.mozilla.org/en-US/docs/Web/Web_Components -->
+<!--
+Here I introduce you another concept called Web Components. This is not the methodology but
+a new technology, a new standard which will hopefully solve the problems we considered.
+-->
 
 ## Technologies behind
 {: .wc-behind }
@@ -915,6 +924,17 @@ You would suffer when redefining
 * Custom Elements
 * HTML Templates
 * HTML Imports
+
+<!--
+Web Components is not another language but some additions into already existing standards.
+So, the additionas are:
+- shadow DOM
+- Custom elements in HTML
+- HTML templates
+- HTML Imports
+
+I will show you in code what it all means.
+-->
 
 <style>
 
@@ -939,9 +959,31 @@ You would suffer when redefining
 * [Templates](demo/templates.html)
 * [HTML import](demo/html-import.html)
 
-<!-- The idea is that you can teach the browser how to deal with your custom components. -->
+<!--
+These are a few pages I prepared for the lecture which demonstrate the concept.
+Let's take a look into them one by one.
 
-<!-- So, the CSS now can be scoped -->
+1. Video page
+Open code
+Inspect element
+Switch on Shadow DOM
+Shadow DOM is DOM behind the component. Video is native component.
+
+2. Custom web component
+We can write our own components.
+HTML is just <my-button>
+In Shadow DOM we can see more compex structure.
+This is because we can tech the browser to deal with our custom component. This teaching
+goes with JavaScript.
+Take into account that styles are encapsulated.
+
+3. Templates
+Easier than describe everything in JavaScript
+
+4. HTML imports
+Everything about one components can be detached into an HTML file and then linked to the page.
+
+-->
 
 ## HTML import, library
 
@@ -951,10 +993,19 @@ You would suffer when redefining
     <!-- Use element -->
     <google-map lat="37.790" long="-122.390"></google-map>
 
+<!--
+With HTML imports you can create your own components and use them across different websites.
+Or you can use someone else's components as a library.
+-->
+
 ## Are We Componentized Yet?
 {: .componentized }
 
 ![](pictures/componentized.png)
+
+<!--
+The concept is new and not all the browsers support.
+-->
 
 <style>
 
@@ -969,6 +1020,12 @@ You would suffer when redefining
 
 * [WebComponents.org](http://webcomponents.org/)
 * [X-Tag](http://www.x-tags.org/)
+
+<!--
+However we can live with Polyfills.
+These are JavaScript additions which "teach" a browser to emulate the work of Web Components.
+Add such a sript onto your page and you will be sure that the components work.
+-->
 
 <style>
 
@@ -1009,10 +1066,28 @@ You would suffer when redefining
 * [Polymer](https://www.polymer-project.org/)
 * [Google Web Components](http://googlewebcomponents.github.io/)
 
+<!--
+You can search for ready-made components. There is not that many of them, but
+you can have some.
+-->
+
 ## Usage examples
 
 * [Toolbar](demo/toolbar.html)
 * [Google map](demo/google-map.html)
+
+<!--
+I created a couple of examples about how the components can be used.
+
+1. Toolbar
+With linking the components simple code turns into more complex. Each element has its styles.
+
+2. Goole Map
+The component encapsulates JavaScript logic
+
+This is all about web components
+
+-->
 
 ## Style guide driven development
 
