@@ -1,10 +1,9 @@
 <html>
   <head>
-    <title>Custom button</title>
+    <title>HTML templates</title>
     <script>
       var ButtonPrototype = Object.create(HTMLElement.prototype);
       ButtonPrototype.createdCallback = function() {
-        //this.textContent = "New text";
 
         var tpl =document.querySelector('#my-button-tpl');
         var clone = document.importNode(tpl.content, true);
@@ -19,6 +18,7 @@
     <template id="my-button-tpl">
       <style>
         input {
+          color: white;
           background-color: blue;
         }
       </style>
