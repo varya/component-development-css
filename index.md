@@ -282,14 +282,14 @@ So, here we see...
 
 <separator/>
 
-    .sidebar { /* Does not work?! */
+    .sidebar { /* Does is redefine `div.sidebar`?! */
       float: right;
     }
 {: .next }
 
 <separator/>
 
-    body .sidebar { /* Overrides 'div .sidebar {}' */
+    body .sidebar { /* Overrides 'div.sidebar {}' */
       float: right;
     }
 {: .next }
