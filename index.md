@@ -90,9 +90,10 @@ this topic has been chosen.
 
 ## Spoiler
 
-You will learn:
-
-TODO: List
+* Industry challenges when developing CSS
+* Today's solution for components on the web
+* Web Components and the future of CSS
+* Style Guide Driven Development
 
 <!--
 This is what I'm going to show today
@@ -1089,6 +1090,333 @@ This is all about web components
 
 -->
 
-## Style guide driven development
+## SGDD
+{: .shout }
 
-## Summary
+## Living Styleguides
+
+A <b>living styleguide</b> represents UI components of your website with exact the same styles
+which you use across the project.
+
+## Style Guide Driven Development
+
+<b>Styleguide Driven Development</b> is the practise of using the styleguide as the focal point for all front-end UI
+development tasks.
+
+## sc5-styleguide package
+{: .npm-package }
+
+    npm install sc5-styleguide
+
+<style>
+.npm-package {
+  background: #000;
+  color: #FFF;
+}
+.npm-package::after {
+  color: #666;
+}
+.npm-package h2 {
+  display: none;
+}
+.npm-package pre code {
+  color: #FFF;
+  background: #000;
+  font-size: 48px;
+  margin-top: 100px;
+}
+</style>
+
+## SC5 Styleguide
+{: .styleguide-page }
+
+http://styleguide.sc5.io
+{: .url }
+
+<iframe src="http://styleguide.sc5.io/"></iframe>
+
+<style>
+.styleguide-page>div {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.styleguide-page h2 {
+  display: none;
+}
+.styleguide-page::after {
+  display: none;
+}
+.styleguide-page .url {
+  margin: 0;
+  padding: 0 15px;
+  height: 55px;
+  border-bottom: #CCC 1px solid;
+}
+.styleguide-page iframe {
+  width: 100%;
+  height: -webkit-calc(100% - 55px);
+  height:    -moz-calc(100% - 55px);
+  height:      -o-calc(100% - 55px);
+  height:         calc(100% - 55px);
+}
+</style>
+
+## Killer features
+
+* {: .next }CSS / SCSS / SASS / LESS
+* {: .next }Related variables
+* {: .next }Live editting
+* {: .next }Angular directives
+* {: .next }Easy to integrate
+
+## How it works
+{: .how-scheme }
+
+<div class="source" markdown="1">
+
+    my-styles/
+      atoms/
+        header.sass
+        menu.sass
+        footer.sass
+      common.sass
+      index.sass
+      products.sass
+
+</div>
+
+<div class="process" markdown="1">
+
+* CLI
+* Gulp
+* Grunt
+
+</div>
+
+<div class="stream">Gulp Stream</div>
+
+<div class="screenshot browser">
+  <img src="pictures/screenshot.png" class="screenshot__image">
+</div>
+
+<style>
+.how-scheme>div {
+  padding: 50px 100px;
+  height: 590px;
+  width: 875px;
+}
+.how-scheme pre code {
+  background: #fff;
+  padding: 0;
+}
+.how-scheme::after {
+  display: none;
+}
+.how-scheme h2 {
+  display: none;
+}
+.how-scheme .source {
+  display: inline-block;
+  height: 300px;
+  border: #CCC 2px solid;
+  border-radius: 0.5em;
+  padding: 0.5em 0.5em 0;
+  position: relative;
+  vertical-align: middle;
+}
+.how-scheme .source code {
+  font-size: 22px;
+  line-height: 1.5em;
+}
+.how-scheme .source pre {
+  margin-bottom: 0;
+}
+.how-scheme .source::after {
+  content: "+";
+  display: inline-block;
+  position: absolute;
+  font-size: 60px;
+  line-height: 60px;
+  right: -50px;
+  top: 40px;
+}
+
+.how-scheme .process {
+  display: inline-block;
+  margin-left: 50px;
+  vertical-align: top;
+  border: #CCC 2px solid;
+  border-radius: 0.5em;
+  padding: 0.5em 0.5em 0 1.5em;
+  position: relative;
+}
+.how-scheme .process ul {
+  margin-bottom: 0.5em;
+}
+.how-scheme .process::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 40px solid #ff9d00;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  right: -50px;
+  top: 50px;
+}
+.how-scheme .stream {
+  display: inline-block;
+  width: 200px;
+  height: 125px;
+  margin-left: 50px;
+  vertical-align: top;
+  border: #CCC 2px solid;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  position: relative;
+  background-image:url(pictures/magic.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+.how-scheme .stream::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #ff9d00;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -50px;
+  left: 50px;
+}
+.screenshot {
+  float: right;
+  margin-top: -100px;
+  margin-right: 60px;
+}
+.screenshot__image {
+  width: 450px;
+}
+.browser {
+  position: relative;
+  padding: 35px 5px 5px;
+  border-radius: 10px 10px 0 0;
+  background: #e2e2e2;
+}
+.how-scheme .screenshot::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-right: 70px solid #ff9d00;
+  border-bottom: 35px solid transparent;
+  position: absolute;
+  left: -80px;
+  top: 40px;
+}
+</style>
+
+## KSS Knyle Style Sheets
+{: .kss }
+
+    // A button suitable for giving a star to someone.
+    //
+    // :hover             - Subtle hover highlight.
+    // .star-given        - A highlight indicating you've already given a star.
+    // .star-given:hover  - Subtle hover highlight on top of star-given styling.
+    // .disabled          - Dims the button to indicate it cannot be used.
+    //
+    // Styleguide 2.1.3.
+    a.button.star{
+      ...
+      &.star-given{
+        ...
+      }
+      &.disabled{
+        ...
+      }
+    }
+
+<style>
+.kss pre code {
+  font-size: 16px;
+  line-height: 1.25em;
+}
+</style>
+
+## Integration
+{: .integration }
+
+### Build the data
+
+    gulp.task('styleguide:generate', function() {
+      return gulp.src('*.scss') // Or *.less, or *.css
+        .pipe(styleguide.generate({
+            rootPath: './output',
+            overviewPath: 'README.md'
+          }))
+        .pipe(gulp.dest(outputPath));
+    });
+
+<style>
+.integration code {
+  font-size: 0.8em;
+}
+.integration h2 {
+  margin-bottom: 0.25em;
+}
+.integration h3 {
+  margin-bottom: 1.25em;
+}
+</style>
+
+## Integration
+{: .integration }
+
+### Apply styles
+
+    gulp.task('styleguide:applystyles', function() {
+      return gulp.src('main.scss')
+        .pipe(sass({
+          errLogToConsole: true
+        }))
+        .pipe(styleguide.applyStyles())
+        .pipe(gulp.dest('./output'));
+    });
+
+## Integration
+{: .integration }
+
+### Watch the changes
+
+    gulp.task('styleguide',
+              ['styleguide:generate', 'styleguide:applystyles']);
+
+    gulp.task('watch', ['styleguide'], function() {
+      gulp.watch(['*.scss'], ['styleguide']);
+    });
+
+## Development with SC5 Styleguide
+
+* Living overview of UI
+* Quick manual testing
+* Quick built-out of new pages
+* Unit tests for UI
+* <b>Easier designer/developer/client collaboration</b>
+
+## Component development in CSS
+
+* BEM (SMACSS, OOCSS)
+* Web Components
+* SGDD
+
+### [varya.me/component-development-css](http://varya.me/component-development-css/)
+
+<!--
+I hope this was useful
+-->
