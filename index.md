@@ -171,6 +171,114 @@ heavy UI: each piece of interface has a lot of code and logic behind
 long running project: need to be maintainable
 -->
 
+## Massive web sites
+
+* Thousands of lines of code
+* A lot of files
+* Many pages
+{: }
+
+* A lot of websites with common codebase
+* Common corporate style
+
+<!--
+You cannot check all the pages visially for every change, so your code should be written the way which
+makes it possible to predict.
+
+A lot of websites with common codebase: repeating would be too expensive.
+-->
+
+## Big teams
+
+* Hundreds of developers
+* Growing teams
+* Changing the context
+
+<!--
+Hundreds of people.
+Developers need common approaches.
+Communication matters.
+-->
+
+## Heavy UI
+{: .heavy-ui .no-title }
+
+<!--
+This login form in the middle does not look as a massive component.
+Just 2 inputs, checkbox, button.
+Guess how much code is needed to represent it?
+-->
+
+<style>
+.heavy-ui div {
+  background-image: url(pictures/domik.png);
+  background-size: contain;
+}
+</style>
+
+## Heavy UI
+{: .heavy-ui-code .no-title }
+
+    <form class="b-mail-domik g-js" method="post" action="https://passport.yandex.com/passport?mode=auth&amp;from=mail&amp;origin=hostroot_com_nol_enter&amp;retpath=https%3A%2F%2Fmail.yandex.com">
+      <i class="b-mail-domik__roof"></i>
+      <table class="b-mail-domik__shadow">
+        <tbody>
+          <tr>
+            <td class="b-mail-domik__shadow__lt">&nbsp;</td>
+            <td class="b-mail-domik__shadow__t"></td>
+            <td class="b-mail-domik__shadow__rt">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="b-mail-domik__shadow__l">&nbsp;</td>
+            <td class="b-mail-domik__shadow__m">
+              <div class="b-mail-domik__form">
+                <div class="b-mail-domik__username">
+                  <label class="b-hint-input g-js" for="b-mail-domik-username11" style="display: block;">username</label>
+                  <div class="b-input"><input tabindex="1" name="login" id="b-mail-domik-username11" class="b-input__text" autocapitalize="off" autocorrect="off" aria-label="username"></div>
+                </div>
+                <div class="b-mail-domik__password">
+                  <label class="b-hint-input g-js" for="b-mail-domik-password11">password</label>
+                  <div class="b-input"><input type="password" tabindex="2" name="passwd" id="b-mail-domik-password11" class="b-input__text" aria-label="password"></div>
+                </div>
+                <div class="b-mail-domik__permanent"><input type="hidden" name="twoweeks" value="yes"><input type="checkbox" tabindex="3" id="b-mail-domik-permament11" class="b-mail-domik__check">&nbsp;<label for="b-mail-domik-permament11">don't remember me</label></div>
+                <div class="b-mail-domik__button b-mail-domik__button_qr"><span class="b-mail-button b-mail-button_default b-mail-button_button b-mail-button_grey-26px b-mail-button_26px b-mail-button_lead"><span class="b-mail-button__inner"><span class="b-mail-button__text">Log in</span></span><input type="submit" tabindex="4" class="b-mail-button__button" value="Log in"></span><a href="https://passport.yandex.com/auth/?mode=qr&amp;retpath=https%3A%2F%2Fmail.yandex.com" class="js-button-qr b-mail-button b-mail-button_default b-mail-button_button b-mail-button_grey-26px b-mail-button_26px b-mail-button_dependent"><span class="b-mail-button__inner"><span class="b-mail-button__ico b-mail-button__ico_qr"></span></span></a></div>
+                <div class="b-mail-domik__remember"><a tabindex="5" class="b-mail-domik__remind js-count-click" href="https://passport.yandex.com/passport?mode=restore" data-metrika="Клики на 'Вспомнить пароль'" data-paranja="check">Forgot your password?</a></div>
+                <div class="b-mail-domik__social"><a class="b-mail-domik__social-link js-social-link" data-provider="fb"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_fb"></i></a><a class="b-mail-domik__social-link js-social-link" data-provider="tw"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_tw"></i></a><a class="b-mail-domik__social-link js-social-link" data-provider="gg"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_gg"></i></a></div>
+              </div>
+            </td>
+            <td class="b-mail-domik__shadow__r">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="b-mail-domik__shadow__lb">&nbsp;</td>
+            <td class="b-mail-domik__shadow__b"></td>
+            <td class="b-mail-domik__shadow__rb">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="antivirus js-antivirus">Yandex.Mail has <a href="http://www.drweb.com/" target="_blank"></a> virus protection</div>
+    </form>
+
+<!--
+So, this is HTML.
+And almost every node here needs CSS. Not one property but many.
+-->
+
+<style>
+.heavy-ui-code pre code {
+  font-size: 7px;
+}
+</style>
+
+## Long running projects
+
+* Code lives for years
+* Continious development
+
+<!--
+In the web development you cannot create version 2, we provide changes little by little
+So, the code should be maintainable for years
+-->
+
 ##Is this good?
 
     H1 { color: blue }
@@ -192,10 +300,11 @@ very simple, was recommended in 1996. Time passed and we met new chalenges.
 
 ## What makes CSS hard?
 
-* …Vertical centering
-* …Equal height columns
-* …Browser inconsistencies
-* …Unobvious tricks
+* Vertical centering
+* Equal height columns
+* Browser inconsistencies
+* Unobvious tricks
+{: .next }
 
 <!--
 Before we decide what is wrong with that peice, let's guess what is hard in CSS.
@@ -209,7 +318,7 @@ When ppl are asked, the repson is usually
 But this is not true, this is easy or at least clear how to manage. You can google for all this questions.
 -->
 
-## What are the real hard problems in CSS?
+## What <b>really</b> makes CSS hard?
 
 * Scoping
 * Specificity conflicts
@@ -276,7 +385,7 @@ would be prioritized.
 So, here we see...
 -->
 
-## How to override?
+## How to overwrite?
 
     <div class="sidebar">Left floated sidebar</div>
 
@@ -289,7 +398,7 @@ So, here we see...
 
 <separator/>
 
-    body .sidebar { /* Overrides 'div.sidebar {}' */
+    body .sidebar { /* Overwrites 'div.sidebar {}' */
       float: right;
     }
 {: .next }
