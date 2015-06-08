@@ -1,5 +1,7 @@
 # Component Driven CSS
 
+[Check out the presentation](http://varya.me/component-development-css/)
+
 ## Plan
 
 1. Introduction
